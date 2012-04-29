@@ -22,5 +22,24 @@
     <string name="label_pathology_box">Pathology</string>
     <string name="label_min_age">Min age</string>
     <string name="label_min_age_box">Min age of administration</string>
-    <string name="label_isMedicine">Medicine</string>
+    <string name="label_category">Category</string>
+    
+    <string name="drug_prompt">Choose a type</string>
+    <string-array name="drug_types">
+        <item>Not defined</item>
+        <item>Pills</item>
+        <item>Vials</item>
+        <item>Syrup</item>
+        <item>Suppository</item>
+        <item>Other</item>
+    </string-array>
+    
+    <string name="category_prompt">Choose a category</string>
+    <string-array name="drug_category">
+        <item>Medicine</item>
+        <item>Generic</item>
+    </string-array>
+    
+    <!-- Toast messages -->
+    <string name="msg_added">Drug saved</string>
 </resources>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <ScrollView 
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" 
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/labelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_name" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            
+            <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/connect_help"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
+            
+            <TextView
+                android:id="@+id/labelType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_type" />            
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            
+            <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/connect_help"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/labelBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_brand" />
+            <TextView
+                android:id="@+id/brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            
+            <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/connect_help"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/labelPurchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_purchase" />
+            <TextView
+                android:id="@+id/purchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            
+            <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/connect_help"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/labelExpire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_expire" />
+            <TextView
+                android:id="@+id/expire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            
+            <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/connect_help"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/labelPathology"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_pathology" />
+            <TextView
+                android:id="@+id/pathology"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            
+            <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/connect_help"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/labelMinAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_min_age" />
+            <TextView
+                android:id="@+id/minAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            
+            <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/connect_help"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
+            
+            <TextView
+                android:id="@+id/labelCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_category" />
+            
+            <TextView
+                android:id="@+id/medicine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            
+        </LinearLayout>
+	</ScrollView>
+</LinearLayout>

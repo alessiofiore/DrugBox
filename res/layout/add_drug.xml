@@ -23,18 +23,20 @@
                 android:layout_height="wrap_content"
                 android:ems="10" 
                 android:hint="@string/label_name_box"/>
+            
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/labelType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_type" />
             <Spinner
                 android:id="@+id/type"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" 
+                android:prompt="@string/drug_prompt" />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/labelBrand"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_brand" />
@@ -46,7 +48,7 @@
                 android:hint="@string/label_brand_box"/>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/labelPurchase"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_purchase" />
@@ -56,7 +58,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/labelExpire"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_expire" />
@@ -66,7 +68,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/labelPathology"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_pathology" />
@@ -79,7 +81,7 @@
                 android:hint="@string/label_pathology_box" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/labelMinAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_min_age" />
@@ -91,12 +93,16 @@
                 android:inputType="number" 
                 android:hint="@string/label_min_age_box"/>
 
-            <CheckBox
-                android:id="@+id/medicine"
+             <TextView
+                android:id="@+id/labelCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_isMedicine" />
-            
+                android:text="@string/label_category" />
+            <Spinner
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:prompt="@string/category_prompt" />            
 			
 			<Button
                 android:id="@+id/button1"

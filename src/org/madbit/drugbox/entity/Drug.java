@@ -1,6 +1,5 @@
 package org.madbit.drugbox.entity;
 
-import java.util.Date;
 
 public class Drug {
 
@@ -8,18 +7,18 @@ public class Drug {
 	private String name;
 	private String type;
 	private String brand;
-	private Date purchaseDate;
-	private Date expireDate;
+	private String purchaseDate;
+	private String expireDate;
 	private String pathology;
 	private int minAge;
-	private boolean medicine;
+	private String category;
 	
 	public Drug() {
 		
 	}
 	
-	public Drug(int did, String name, String brand, Date purchaseDate,
-			Date expireDate, String pathology, int minAge, boolean medicine) {
+	public Drug(int did, String name, String brand, String purchaseDate,
+			String expireDate, String pathology, int minAge, String category) {
 		super();
 		this.did = did;
 		this.name = name;
@@ -28,7 +27,7 @@ public class Drug {
 		this.expireDate = expireDate;
 		this.pathology = pathology;
 		this.minAge = minAge;
-		this.medicine = medicine;
+		this.category = category;
 	}
 
 	public int getDid() {
@@ -63,19 +62,19 @@ public class Drug {
 		this.brand = brand;
 	}
 
-	public Date getPurchaseDate() {
+	public String getPurchaseDate() {
 		return purchaseDate;
 	}
 
-	public void setPurchaseDate(Date purchaseDate) {
+	public void setPurchaseDate(String purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
 
-	public Date getExpireDate() {
+	public String getExpireDate() {
 		return expireDate;
 	}
 
-	public void setExpireDate(Date expireDate) {
+	public void setExpireDate(String expireDate) {
 		this.expireDate = expireDate;
 	}
 
@@ -95,12 +94,14 @@ public class Drug {
 		this.minAge = minAge;
 	}
 
-	public boolean isMedicine() {
-		return medicine;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setMedicine(boolean medicine) {
-		this.medicine = medicine;
+	public void setCategory(String category) {
+		this.category = category;
 	}
+
+	
 	
 }

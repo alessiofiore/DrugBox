@@ -3,31 +3,28 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical" >
-        
+        android:orientation="vertical" >
             <Button
                 android:id="@+id/button_add"
                 android:layout_width="100pt"
                 android:layout_height="wrap_content"
                 android:onClick="onClickAdd"
                 android:text="@string/button_add" />
-
             <Button
                 android:id="@+id/button_search"
                 android:layout_width="100pt"
                 android:layout_height="wrap_content"
                 android:text="@string/button_search" />
-
             <Button
                 android:id="@+id/button_list"
                 android:layout_width="100pt"
                 android:layout_height="wrap_content"
+                android:onClick="onListAdd"
                 android:text="@string/button_list" />
-
         </LinearLayout>
 </LinearLayout>
