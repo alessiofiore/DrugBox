@@ -152,8 +152,8 @@
                 android:text="@string/label_category" />
             
             <TextView
-                android:id="@+id/medicine"
-                android:layout_width="wrap_content"
+                android:id="@+id/category"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             
         </LinearLayout>

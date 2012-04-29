@@ -18,6 +18,7 @@ public class DrugDetailsActivity extends Activity {
 		TextView expire = (TextView) findViewById(R.id.expire);
 		TextView pathology = (TextView) findViewById(R.id.pathology);
 		TextView minAge = (TextView) findViewById(R.id.minAge);
+		TextView category = (TextView) findViewById(R.id.category);
 		
 		String nameExtra = (String) this.getIntent().getSerializableExtra("name");
 		String typeExtra = (String) this.getIntent().getSerializableExtra("type");
@@ -26,6 +27,7 @@ public class DrugDetailsActivity extends Activity {
 		String expireExtra = (String) this.getIntent().getSerializableExtra("expire");
 		String pathologyExtra = (String) this.getIntent().getSerializableExtra("pathology");
 		Integer minAgeExtra = (Integer) this.getIntent().getSerializableExtra("minAge");
+		String categoryExtra = (String) this.getIntent().getSerializableExtra("category");
 		
 		name.setText(nameExtra);
 		type.setText(typeExtra);
@@ -34,7 +36,6 @@ public class DrugDetailsActivity extends Activity {
 		expire.setText(expireExtra);
 		pathology.setText(pathologyExtra);
 		//minAge.setText(minAgeExtra);
-		
-//		id.setText(ids);
+		category.setText(categoryExtra);
 	}
 }
