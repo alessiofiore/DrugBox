@@ -57,6 +57,10 @@ public class DrugDAO {
 		return drugs;
 	}
 	
+	public void deleteDrug(int drugId) {
+		database.delete(DatabaseHelper.TABLE_DRUG, DatabaseHelper.DRUG_ID + "=?", new String [] {new Integer(drugId).toString()});
+	}
+	
 	private Drug cursorToDrug(Cursor cursor) {
 		Drug drug = new Drug();
 		drug.setDid(cursor.getInt(0));

@@ -38,8 +38,19 @@
     <string-array name="drug_category">
         <item>Medicine</item>
         <item>Generic</item>
+        <item>Other</item>
     </string-array>
+    
+    <!-- List Drugs -->
+    <string name="no_item">No drugs</string>
     
     <!-- Toast messages -->
     <string name="msg_added">Drug saved</string>
+    <string name="msg_deleted">Drug deleted</string>
+    
+    <!-- Option Menu -->
+    <string name="edit_drug">Edit</string>
+    <string name="delete_drug">Delete</string>
+    
+    
 </resources>

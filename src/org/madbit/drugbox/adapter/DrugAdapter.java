@@ -44,11 +44,9 @@ public class DrugAdapter extends ArrayAdapter<Drug> {
         {
             drugsView = (LinearLayout) convertView;
         }
-        //Get the text boxes from the listitem.xml file
         TextView drugName =(TextView)drugsView.findViewById(R.id.drugName);
         TextView drugType =(TextView)drugsView.findViewById(R.id.drugType);
  
-        //Assign the appropriate data from our alert object above
         drugName.setText(drug.getName());
         drugType.setText(drug.getType());
  

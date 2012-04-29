@@ -1,15 +1,25 @@
 package org.madbit.drugbox;
 
+import org.madbit.drugbox.dmf.DrugDAO;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class DrugDetailsActivity extends Activity {
+	
+	private int drugId;
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drug_details);
+		
+		drugId = (Integer) this.getIntent().getSerializableExtra("did");
 		
 		TextView name = (TextView) findViewById(R.id.name);
 		TextView type = (TextView) findViewById(R.id.type);
@@ -37,5 +47,36 @@ public class DrugDetailsActivity extends Activity {
 		pathology.setText(pathologyExtra);
 		//minAge.setText(minAgeExtra);
 		category.setText(categoryExtra);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.drugdetails_option_menu, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	        case R.id.edit_drug:
+	            
+	            return true;
+	        case R.id.delete_drug:
+	        	DrugDAO drugDao = new DrugDAO(this);
+		    	drugDao.open();
+		    	drugDao.deleteDrug(drugId);
+		    	drugDao.close();
+		    	
+		    	// set message showed in ListDrugsActivity
+		    	Bundle bundle = new Bundle();    	
+		    	bundle.putString("msg_deleted",getString(R.string.msg_deleted));
+		    	startActivity(new Intent(this, ListDrugsActivity.class).putExtras(bundle));
+		    			    	
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 }

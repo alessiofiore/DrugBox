@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class ListDrugsActivity extends ListActivity  {
 	
@@ -18,20 +20,31 @@ public class ListDrugsActivity extends ListActivity  {
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		if(this.getIntent().getExtras() != null)
+        	Toast.makeText(this, this.getIntent().getExtras().getString("msg_deleted"),Toast.LENGTH_LONG).show();
+		
 		DrugDAO drugDao = new DrugDAO(this);
 		drugDao.open();
 		List<Drug> drugs = drugDao.getAllDrugs();
 		drugDao.close();
 		
-		DrugAdapter drugAdapter = new DrugAdapter(ListDrugsActivity.this, R.layout.list_drugs, drugs);
-		setListAdapter(drugAdapter);
-		drugAdapter.notifyDataSetChanged();
+		
+//			 setContentView(R.layout.list_drugs);
+//			 TextView message = (TextView) findViewById(R.id.message);
+//			 message.setText(getString(R.string.no_item));
+		
+		
+			DrugAdapter drugAdapter = new DrugAdapter(ListDrugsActivity.this, R.layout.list_drugs, drugs);
+			setListAdapter(drugAdapter);
+			drugAdapter.notifyDataSetChanged();
+		
 	}
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		Drug drug = (Drug) getListAdapter().getItem(position);		
 		Intent drugDetailsActivity = new Intent(this, DrugDetailsActivity.class);
+		drugDetailsActivity.putExtra("did", drug.getDid());
 		drugDetailsActivity.putExtra("name", drug.getName());
 		drugDetailsActivity.putExtra("type", drug.getType());
 		drugDetailsActivity.putExtra("brand", drug.getBrand());
@@ -42,5 +55,5 @@ public class ListDrugsActivity extends ListActivity  {
 		drugDetailsActivity.putExtra("category", drug.getCategory());
 		
 		this.startActivity(drugDetailsActivity);
-	}
+	}	
 }
