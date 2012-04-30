@@ -5,20 +5,20 @@ public class Drug {
 
 	private int did;
 	private String name;
-	private String type;
+	private int type;
 	private String brand;
 	private String purchaseDate;
 	private String expireDate;
 	private String pathology;
 	private int minAge;
-	private String category;
+	private int category;
 	
 	public Drug() {
 		
 	}
 	
 	public Drug(int did, String name, String brand, String purchaseDate,
-			String expireDate, String pathology, int minAge, String category) {
+			String expireDate, String pathology, int minAge, int category) {
 		super();
 		this.did = did;
 		this.name = name;
@@ -46,11 +46,11 @@ public class Drug {
 		this.name = name;
 	}
 
-	public String getType() {
+	public int getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 
@@ -94,11 +94,11 @@ public class Drug {
 		this.minAge = minAge;
 	}
 
-	public String getCategory() {
+	public int getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(int category) {
 		this.category = category;
 	}
 

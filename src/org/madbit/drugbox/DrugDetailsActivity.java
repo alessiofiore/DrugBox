@@ -8,16 +8,29 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DrugDetailsActivity extends Activity {
 	
 	private int drugId;
+	
+	String nameExtra;
+	int typeExtra;
+	String brandExtra;
+	String purchaseExtra;
+	String expireExtra;
+	String pathologyExtra;
+	int minAgeExtra;
+	int categoryExtra;
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drug_details);
+		
+		
 		
 		drugId = (Integer) this.getIntent().getSerializableExtra("did");
 		
@@ -30,23 +43,32 @@ public class DrugDetailsActivity extends Activity {
 		TextView minAge = (TextView) findViewById(R.id.minAge);
 		TextView category = (TextView) findViewById(R.id.category);
 		
-		String nameExtra = (String) this.getIntent().getSerializableExtra("name");
-		String typeExtra = (String) this.getIntent().getSerializableExtra("type");
-		String brandExtra = (String) this.getIntent().getSerializableExtra("brand");
-		String purchaseExtra = (String) this.getIntent().getSerializableExtra("purchase");
-		String expireExtra = (String) this.getIntent().getSerializableExtra("expire");
-		String pathologyExtra = (String) this.getIntent().getSerializableExtra("pathology");
-		Integer minAgeExtra = (Integer) this.getIntent().getSerializableExtra("minAge");
-		String categoryExtra = (String) this.getIntent().getSerializableExtra("category");
+		nameExtra = (String) this.getIntent().getSerializableExtra("name");
+		typeExtra = (Integer) this.getIntent().getSerializableExtra("type");
+		brandExtra = (String) this.getIntent().getSerializableExtra("brand");
+		purchaseExtra = (String) this.getIntent().getSerializableExtra("purchase");
+		expireExtra = (String) this.getIntent().getSerializableExtra("expire");
+		pathologyExtra = (String) this.getIntent().getSerializableExtra("pathology");
+		minAgeExtra = (Integer) this.getIntent().getSerializableExtra("minAge");
+		categoryExtra = (Integer) this.getIntent().getSerializableExtra("category");
 		
 		name.setText(nameExtra);
-		type.setText(typeExtra);
+		
+		// fetch the relative String for the type
+        ArrayAdapter<CharSequence> adapterType = ArrayAdapter.createFromResource(this, R.array.drug_types, android.R.layout.simple_spinner_item);
+		String typeString = adapterType.getItem(typeExtra).toString();			
+        type.setText(typeString);
+        
 		brand.setText(brandExtra);
 		purchase.setText(purchaseExtra);
 		expire.setText(expireExtra);
 		pathology.setText(pathologyExtra);
-		//minAge.setText(minAgeExtra);
-		category.setText(categoryExtra);
+		minAge.setText(new Integer(minAgeExtra).toString());
+		
+		// fetch the relative String for the category
+        ArrayAdapter<CharSequence> adapterCategory = ArrayAdapter.createFromResource(this, R.array.drug_category, android.R.layout.simple_spinner_item);
+		String categoryString = adapterCategory.getItem(categoryExtra).toString();			
+		category.setText(categoryString);
 	}
 	
 	@Override
@@ -58,10 +80,21 @@ public class DrugDetailsActivity extends Activity {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle item selection
+		Bundle bundle = new Bundle();
+		
+		// Handle item selection
 	    switch (item.getItemId()) {
-	        case R.id.edit_drug:
-	            
+	        case R.id.edit_drug:	        	    	
+		    	bundle.putInt("did", drugId);
+		    	bundle.putString("name", nameExtra);
+		    	bundle.putInt("type", typeExtra);
+		    	bundle.putString("brand", brandExtra);
+		    	bundle.putString("purchase", purchaseExtra);
+		    	bundle.putString("expire", expireExtra);
+		    	bundle.putString("pathology", pathologyExtra);
+		    	bundle.putInt("minAge", minAgeExtra);
+		    	bundle.putInt("category", categoryExtra);
+		    	startActivity(new Intent(this, EditDrugActivity.class).putExtras(bundle));
 	            return true;
 	        case R.id.delete_drug:
 	        	DrugDAO drugDao = new DrugDAO(this);
@@ -70,7 +103,7 @@ public class DrugDetailsActivity extends Activity {
 		    	drugDao.close();
 		    	
 		    	// set message showed in ListDrugsActivity
-		    	Bundle bundle = new Bundle();    	
+		    	bundle = new Bundle();    	
 		    	bundle.putString("msg_deleted",getString(R.string.msg_deleted));
 		    	startActivity(new Intent(this, ListDrugsActivity.class).putExtras(bundle));
 		    			    	

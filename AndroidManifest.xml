@@ -25,6 +25,8 @@
 		</activity>
 		<activity android:name="org.madbit.drugbox.DrugDetailsActivity" android:label="@string/app_name" >
 		</activity>
+		<activity android:name="org.madbit.drugbox.EditDrugActivity" android:label="@string/app_name" >
+		</activity>
 		
     </application>
 

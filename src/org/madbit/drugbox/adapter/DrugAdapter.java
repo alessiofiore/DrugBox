@@ -47,8 +47,12 @@ public class DrugAdapter extends ArrayAdapter<Drug> {
         TextView drugName =(TextView)drugsView.findViewById(R.id.drugName);
         TextView drugType =(TextView)drugsView.findViewById(R.id.drugType);
  
-        drugName.setText(drug.getName());
-        drugType.setText(drug.getType());
+        drugName.setText(drug.getName());        
+        
+        // fetch the relative String for the Type
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.context, R.array.drug_types, android.R.layout.simple_spinner_item);
+		String type = adapter.getItem(drug.getType()).toString();			
+        drugType.setText(type);
  
         return drugsView;
     }

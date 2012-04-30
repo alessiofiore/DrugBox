@@ -61,17 +61,30 @@ public class DrugDAO {
 		database.delete(DatabaseHelper.TABLE_DRUG, DatabaseHelper.DRUG_ID + "=?", new String [] {new Integer(drugId).toString()});
 	}
 	
+	public void updateDrug(Drug drug) {
+		ContentValues drugValues = new ContentValues();
+		drugValues.put(DatabaseHelper.DRUG_NAME, drug.getName());
+		drugValues.put(DatabaseHelper.DRUG_TYPE, drug.getType());
+		drugValues.put(DatabaseHelper.DRUG_BRAND, drug.getBrand());
+		drugValues.put(DatabaseHelper.DRUG_PURCHASE_DATE, drug.getPurchaseDate());
+		drugValues.put(DatabaseHelper.DRUG_EXPIRING_DATE, drug.getExpireDate());
+		drugValues.put(DatabaseHelper.DRUG_PATHOLOGY, drug.getPathology());
+		drugValues.put(DatabaseHelper.DRUG_MIN_AGE, drug.getMinAge());
+		drugValues.put(DatabaseHelper.DRUG_CATEGORY, drug.getCategory());
+		database.update(DatabaseHelper.TABLE_DRUG, drugValues, DatabaseHelper.DRUG_ID + "=?", new String [] {new Integer(drug.getDid()).toString()});		
+	}
+	
 	private Drug cursorToDrug(Cursor cursor) {
 		Drug drug = new Drug();
 		drug.setDid(cursor.getInt(0));
 		drug.setName(cursor.getString(1));
-		drug.setType(cursor.getString(2));
+		drug.setType(cursor.getInt(2));
 		drug.setBrand(cursor.getString(3));
 		drug.setPurchaseDate(cursor.getString(4));
 		drug.setExpireDate(cursor.getString(5));
 		drug.setPathology(cursor.getString(6));
 		drug.setMinAge(cursor.getInt(7));
-		drug.setCategory(cursor.getString(8));
+		drug.setCategory(cursor.getInt(8));
 		return drug;
 	}
 }

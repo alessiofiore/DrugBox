@@ -3,8 +3,8 @@ package org.madbit.drugbox;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Toast;
 
 public class HomeActivity extends Activity {
 	
@@ -13,10 +13,18 @@ public class HomeActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
-        if(this.getIntent().getExtras() != null)
-        	Toast.makeText(this, this.getIntent().getExtras().getString("msg_added"),Toast.LENGTH_LONG).show();
     }
+    
+    @Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+    	// return to the Android home screen (launcher)
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	    	Intent i = new Intent(Intent.ACTION_MAIN);
+	    	i.addCategory(Intent.CATEGORY_HOME);
+	    	startActivity(i);
+	    }
+	    return super.onKeyDown(keyCode, event);
+	}
     
     public void onClickAdd(View view) {
     	Intent intent = new Intent(this, AddDrugActivity.class);

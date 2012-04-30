@@ -13,16 +13,16 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/labelName"
+                android:id="@+id/drugLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_name" />
-            <TextView
+            <EditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" 
-                android:textColor="#40B2E3"
-                android:textSize="12sp"/>
+                android:layout_height="wrap_content"
+                android:ems="10" 
+                android:hint="@string/label_name_box"/>
             
             <TextView
 			    android:id="@+id/line"
@@ -37,11 +37,12 @@
                 android:id="@+id/labelType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_type" />            
-            <TextView
+                android:text="@string/label_type" />
+            <Spinner
                 android:id="@+id/type"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" 
+                android:prompt="@string/drug_prompt" />
             
             <TextView
 			    android:id="@+id/line"
@@ -57,10 +58,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_brand" />
-            <TextView
+            <EditText
                 android:id="@+id/brand"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:ems="10" 
+                android:hint="@string/label_brand_box"/>
             
             <TextView
 			    android:id="@+id/line"
@@ -79,7 +82,9 @@
             <TextView
                 android:id="@+id/purchase"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" 
+                android:textColor="#1B91E0"
+                android:textSize="12sp"/>
             
             <TextView
 			    android:id="@+id/line"
@@ -114,10 +119,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_pathology" />
-            <TextView
+            <EditText
                 android:id="@+id/pathology"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine" 
+                android:hint="@string/label_pathology_box" />
             
             <TextView
 			    android:id="@+id/line"
@@ -133,10 +141,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_min_age" />
-            <TextView
+            <EditText
                 android:id="@+id/minAge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number" 
+                android:hint="@string/label_min_age_box"/>
             
             <TextView
 			    android:id="@+id/line"
@@ -146,17 +156,25 @@
 			    android:layout_below="@+id/connect_help"
 			    android:layout_width="match_parent"
 			    android:layout_height="1dp" />
-            
-            <TextView
+
+             <TextView
                 android:id="@+id/labelCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_category" />
-            
-            <TextView
+            <Spinner
                 android:id="@+id/category"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" 
+                android:prompt="@string/category_prompt" />            
+			
+			<Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/button_save" 
+                android:onClick="onSaveClick"/>
             
         </LinearLayout>
 	</ScrollView>

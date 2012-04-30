@@ -26,17 +26,16 @@ public final class R {
     }
     public static final class id {
         public static final int brand=0x7f070005;
-        public static final int button1=0x7f070010;
-        public static final int button_add=0x7f070017;
-        public static final int button_list=0x7f070019;
-        public static final int button_search=0x7f070018;
+        public static final int button_add=0x7f070016;
+        public static final int button_list=0x7f070018;
+        public static final int button_search=0x7f070017;
         public static final int category=0x7f07000f;
         public static final int connect_help=0x7f070013;
-        public static final int delete_drug=0x7f07001b;
+        public static final int delete_drug=0x7f07001a;
         public static final int drugLabel=0x7f070000;
-        public static final int drugName=0x7f070015;
-        public static final int drugType=0x7f070016;
-        public static final int edit_drug=0x7f07001a;
+        public static final int drugName=0x7f070014;
+        public static final int drugType=0x7f070015;
+        public static final int edit_drug=0x7f070019;
         public static final int expire=0x7f070009;
         public static final int labelBrand=0x7f070004;
         public static final int labelCategory=0x7f07000e;
@@ -47,18 +46,19 @@ public final class R {
         public static final int labelPurchase=0x7f070006;
         public static final int labelType=0x7f070002;
         public static final int line=0x7f070012;
-        public static final int message=0x7f070014;
         public static final int minAge=0x7f07000d;
         public static final int name=0x7f070001;
         public static final int pathology=0x7f07000b;
         public static final int purchase=0x7f070007;
+        public static final int saveButton=0x7f070010;
         public static final int type=0x7f070003;
     }
     public static final class layout {
         public static final int add_drug=0x7f030000;
         public static final int drug_details=0x7f030001;
-        public static final int list_drugs=0x7f030002;
-        public static final int main=0x7f030003;
+        public static final int edit_drug=0x7f030002;
+        public static final int list_drugs=0x7f030003;
+        public static final int main=0x7f030004;
     }
     public static final class menu {
         public static final int drugdetails_option_menu=0x7f060000;
@@ -72,11 +72,11 @@ public final class R {
         public static final int button_save=0x7f040005;
         public static final int button_search=0x7f040003;
         public static final int category_prompt=0x7f040013;
-        public static final int delete_drug=0x7f040018;
+        public static final int delete_drug=0x7f040019;
         public static final int drug_prompt=0x7f040012;
         /**  Option Menu 
          */
-        public static final int edit_drug=0x7f040017;
+        public static final int edit_drug=0x7f040018;
         public static final int hello=0x7f040000;
         public static final int label_brand=0x7f040009;
         public static final int label_brand_box=0x7f04000a;
@@ -96,6 +96,7 @@ public final class R {
          */
         public static final int msg_added=0x7f040015;
         public static final int msg_deleted=0x7f040016;
+        public static final int msg_updated=0x7f040017;
         /**  List Drugs 
          */
         public static final int no_item=0x7f040014;

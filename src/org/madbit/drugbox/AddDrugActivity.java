@@ -8,13 +8,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class AddDrugActivity extends Activity  {
+public class AddDrugActivity extends Activity {
 	
 	private EditText name;
 	private Spinner type;
@@ -24,6 +23,8 @@ public class AddDrugActivity extends Activity  {
 	private EditText pathology;
 	private EditText minAge;
 	private Spinner category;
+	
+	final int MIN_AGE = 16;
 	
 	/** Called when the activity is first created. */
     @Override
@@ -53,7 +54,7 @@ public class AddDrugActivity extends Activity  {
     	Drug drug = new Drug();
     	if(name.getText().toString().length() != 0) {
 	    	drug.setName(name.getText().toString());
-	    	drug.setType(type.getSelectedItem().toString());
+	    	drug.setType(type.getSelectedItemPosition());
 	    	drug.setBrand(brand.getText().toString());
 	    	
 	    	int day = purchaseDate.getDayOfMonth();
@@ -71,7 +72,9 @@ public class AddDrugActivity extends Activity  {
 	    	drug.setPathology(pathology.getText().toString());
 	    	if(minAge.getText().toString().length() != 0)
 	    		drug.setMinAge(Integer.parseInt(minAge.getText().toString()));
-	    	drug.setCategory(category.getSelectedItem().toString());
+	    	else
+	    		drug.setMinAge(MIN_AGE);
+	    	drug.setCategory(category.getSelectedItemPosition());
 	    	
 	    	DrugDAO drugDao = new DrugDAO(this);
 	    	drugDao.open();
@@ -81,7 +84,7 @@ public class AddDrugActivity extends Activity  {
 	    	// set message showed in HomeActivity
 	    	Bundle bundle = new Bundle();    	
 	    	bundle.putString("msg_added",getString(R.string.msg_added));
-	    	startActivity(new Intent(this, HomeActivity.class).putExtras(bundle));
+	    	startActivity(new Intent(this, ListDrugsActivity.class).putExtras(bundle));
     	}
     	else {
     		Toast.makeText(this, "You need to insert the name",Toast.LENGTH_LONG).show();

@@ -27,13 +27,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+ TABLE_DRUG + "( " +
 				DRUG_ID + " integer primary key autoincrement, " +
 				DRUG_NAME + " text not null, " +
-				DRUG_TYPE +	" text not null, " +
+				DRUG_TYPE +	" integer not null, " +
 				DRUG_BRAND + " text, " +
 				DRUG_PURCHASE_DATE + " text, " +
 				DRUG_EXPIRING_DATE + " text, " +
 				DRUG_PATHOLOGY + " text, " +
 				DRUG_MIN_AGE + " integer, " +
-				DRUG_CATEGORY + " text);";
+				DRUG_CATEGORY + " integer);";
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);

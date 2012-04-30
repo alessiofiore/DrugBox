@@ -36,6 +36,7 @@
     
     <string name="category_prompt">Choose a category</string>
     <string-array name="drug_category">
+        <item>Not defined</item>
         <item>Medicine</item>
         <item>Generic</item>
         <item>Other</item>
@@ -47,6 +48,7 @@
     <!-- Toast messages -->
     <string name="msg_added">Drug saved</string>
     <string name="msg_deleted">Drug deleted</string>
+    <string name="msg_updated">Drug updated</string>
     
     <!-- Option Menu -->
     <string name="edit_drug">Edit</string>
