@@ -92,6 +92,9 @@ public final class R {
         public static final int label_pathology_box=0x7f04000e;
         public static final int label_purchase=0x7f04000b;
         public static final int label_type=0x7f040008;
+        /**  Notifications 
+         */
+        public static final int local_service_started=0x7f04001a;
         /**  Toast messages 
          */
         public static final int msg_added=0x7f040015;

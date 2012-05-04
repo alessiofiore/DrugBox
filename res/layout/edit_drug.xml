@@ -79,12 +79,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_purchase" />
-            <TextView
+            <EditText
                 android:id="@+id/purchase"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" 
-                android:textColor="#1B91E0"
-                android:textSize="12sp"/>
+                android:editable="false"
+                android:cursorVisible="false" />
             
             <TextView
 			    android:id="@+id/line"
@@ -100,17 +100,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_expire" />
-            <TextView
+            <EditText
                 android:id="@+id/expire"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" 
+                android:editable="false"
+                android:cursorVisible="false"  />
             
             <TextView
 			    android:id="@+id/line"
 			    style="?android:attr/listSeparatorTextViewStyle"
 			    android:paddingTop="5dip"
 			    android:gravity="center_horizontal"
-			    android:layout_below="@+id/connect_help"
+			    android:layout_below="@+id/labelPathology"
 			    android:layout_width="match_parent"
 			    android:layout_height="1dp" />
 

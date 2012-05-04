@@ -10,7 +10,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class DrugDetailsActivity extends Activity {
 	
@@ -29,8 +28,6 @@ public class DrugDetailsActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drug_details);
-		
-		
 		
 		drugId = (Integer) this.getIntent().getSerializableExtra("did");
 		

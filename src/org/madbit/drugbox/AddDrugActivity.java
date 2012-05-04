@@ -1,5 +1,8 @@
 package org.madbit.drugbox;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.madbit.drugbox.dmf.DrugDAO;
 import org.madbit.drugbox.entity.Drug;
 
@@ -25,6 +28,7 @@ public class AddDrugActivity extends Activity {
 	private Spinner category;
 	
 	final int MIN_AGE = 16;
+	final String DATE_PATTERN = "yyyy/MM/dd";
 	
 	/** Called when the activity is first created. */
     @Override
@@ -57,17 +61,16 @@ public class AddDrugActivity extends Activity {
 	    	drug.setType(type.getSelectedItemPosition());
 	    	drug.setBrand(brand.getText().toString());
 	    	
-	    	int day = purchaseDate.getDayOfMonth();
-	    	int month = purchaseDate.getMonth();
-	    	int year = purchaseDate.getYear();
-	    	String purchase = new String(year + "/" + month + "/" + day);
-	    	drug.setPurchaseDate(purchase);
+	    	// formatting date	    	
+	    	SimpleDateFormat fmtDate = new SimpleDateFormat(DATE_PATTERN);
 	    	
-	    	day = expireDate.getDayOfMonth();
-	    	month = expireDate.getMonth();
-	    	year = expireDate.getYear();
-	    	String expire = new String(year + "/" + month + "/" + day);
-	    	drug.setExpireDate(expire);
+	    	Date purchase = new Date(purchaseDate.getYear() - 1900, purchaseDate.getMonth(), purchaseDate.getDayOfMonth());	    	
+	    	String formattedDate = fmtDate.format(purchase);
+	    	drug.setPurchaseDate(formattedDate);
+	    	
+	    	Date expire = new Date(expireDate.getYear() - 1900, expireDate.getMonth(), expireDate.getDayOfMonth());
+	    	formattedDate = fmtDate.format(expire);
+	    	drug.setExpireDate(formattedDate);
 	    	
 	    	drug.setPathology(pathology.getText().toString());
 	    	if(minAge.getText().toString().length() != 0)

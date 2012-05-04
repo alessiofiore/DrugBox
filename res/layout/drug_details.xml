@@ -16,13 +16,13 @@
                 android:id="@+id/labelName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_name" />
+                android:text="@string/label_name" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />
             <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" 
-                android:textColor="#40B2E3"
-                android:textSize="12sp"/>
+                android:layout_height="wrap_content" />
             
             <TextView
 			    android:id="@+id/line"
@@ -37,7 +37,9 @@
                 android:id="@+id/labelType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_type" />            
+                android:text="@string/label_type" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />            
             <TextView
                 android:id="@+id/type"
                 android:layout_width="match_parent"
@@ -56,7 +58,9 @@
                 android:id="@+id/labelBrand"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_brand" />
+                android:text="@string/label_brand" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />
             <TextView
                 android:id="@+id/brand"
                 android:layout_width="match_parent"
@@ -75,11 +79,13 @@
                 android:id="@+id/labelPurchase"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_purchase" />
+                android:text="@string/label_purchase" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />
             <TextView
                 android:id="@+id/purchase"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
             
             <TextView
 			    android:id="@+id/line"
@@ -94,7 +100,9 @@
                 android:id="@+id/labelExpire"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_expire" />
+                android:text="@string/label_expire" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />
             <TextView
                 android:id="@+id/expire"
                 android:layout_width="wrap_content"
@@ -113,7 +121,9 @@
                 android:id="@+id/labelPathology"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_pathology" />
+                android:text="@string/label_pathology" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />
             <TextView
                 android:id="@+id/pathology"
                 android:layout_width="match_parent"
@@ -132,7 +142,9 @@
                 android:id="@+id/labelMinAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_min_age" />
+                android:text="@string/label_min_age" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />
             <TextView
                 android:id="@+id/minAge"
                 android:layout_width="match_parent"
@@ -151,7 +163,9 @@
                 android:id="@+id/labelCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_category" />
+                android:text="@string/label_category" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />
             
             <TextView
                 android:id="@+id/category"

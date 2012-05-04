@@ -1,6 +1,6 @@
 package org.madbit.drugbox;
 
-import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -16,32 +16,49 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class EditDrugActivity extends Activity {	
 
 	final int MIN_AGE = 16;
 	
-	private int drugID;
+	int drugID;	
+	EditText name;
+	Spinner type;
+	EditText brand;
+	EditText purchaseDate;
+	EditText expireDate;
+	EditText pathology;
+	EditText minAge;
+	Spinner category;
 	
-	private EditText name;
-	private Spinner type;
-	private EditText brand;
-	private TextView purchaseDate;
-	private TextView expireDate;
-	private EditText pathology;
-	private EditText minAge;
-	private Spinner category;
+	String purchaseExtra;
+	String expireExtra;
+	
+	int purchaseYear;
+	int purchaseMonth;
+	int purchaseDay;
+	int expireYear;
+	int expireMonth;
+	int expireDay;
 	
 	SimpleDateFormat fmtDate = new SimpleDateFormat("yyyy/MM/dd");
-	Calendar date = Calendar.getInstance();
-	DatePickerDialog.OnDateSetListener d=new DatePickerDialog.OnDateSetListener() {
+	Calendar purchaseCalendar = Calendar.getInstance();
+	DatePickerDialog.OnDateSetListener purchaseDatePicker = new DatePickerDialog.OnDateSetListener() {
 		public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-			date.set(Calendar.YEAR, year);
-			date.set(Calendar.MONTH, monthOfYear);
-			date.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-			updateLabel();
+			purchaseCalendar.set(Calendar.YEAR, year);
+			purchaseCalendar.set(Calendar.MONTH, monthOfYear);
+			purchaseCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+			updatePurchaseLabel();
+		}
+	};
+	Calendar expireCalendar = Calendar.getInstance();
+	DatePickerDialog.OnDateSetListener expireDatePicker = new DatePickerDialog.OnDateSetListener() {
+		public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+			expireCalendar.set(Calendar.YEAR, year);
+			expireCalendar.set(Calendar.MONTH, monthOfYear);
+			expireCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+			updateExpireLabel();
 		}
 	};
 	
@@ -57,8 +74,8 @@ public class EditDrugActivity extends Activity {
         type.setAdapter(adapter);
         
         brand = (EditText) findViewById(R.id.brand);
-        purchaseDate = (TextView) findViewById(R.id.purchase);
-        expireDate = (TextView) findViewById(R.id.expire);
+        purchaseDate = (EditText) findViewById(R.id.purchase);
+        expireDate = (EditText) findViewById(R.id.expire);
         pathology = (EditText) findViewById(R.id.pathology);
         minAge = (EditText) findViewById(R.id.minAge);
         
@@ -71,8 +88,8 @@ public class EditDrugActivity extends Activity {
         String nameExtra = (String) this.getIntent().getSerializableExtra("name");
 		int typeExtra = (Integer) this.getIntent().getSerializableExtra("type");
 		String brandExtra = (String) this.getIntent().getSerializableExtra("brand");
-		String purchaseExtra = (String) this.getIntent().getSerializableExtra("purchase");
-		String expireExtra = (String) this.getIntent().getSerializableExtra("expire");
+		purchaseExtra = (String) this.getIntent().getSerializableExtra("purchase");
+		expireExtra = (String) this.getIntent().getSerializableExtra("expire");
 		String pathologyExtra = (String) this.getIntent().getSerializableExtra("pathology");
 		int minAgeExtra = (Integer) this.getIntent().getSerializableExtra("minAge");
 		int categoryExtra = (Integer) this.getIntent().getSerializableExtra("category");
@@ -80,19 +97,42 @@ public class EditDrugActivity extends Activity {
 		name.setText(nameExtra);
 		type.setSelection(typeExtra);
 		brand.setText(brandExtra);
-		purchaseDate.setText(purchaseExtra);
+		
+		try {
+			purchaseYear = fmtDate.parse(purchaseExtra).getYear() + 1900;
+			purchaseMonth = fmtDate.parse(purchaseExtra).getMonth();
+			purchaseDay = fmtDate.parse(purchaseExtra).getDay() - 1;
+			expireYear = fmtDate.parse(expireExtra).getYear() + 1900;
+			expireMonth = fmtDate.parse(expireExtra).getMonth();
+			expireDay = fmtDate.parse(expireExtra).getDay() - 1;
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		purchaseDate.setText(purchaseExtra);		
 		purchaseDate.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				new DatePickerDialog(
-						EditDrugActivity.this,
-						d,
-						date.get(Calendar.YEAR),
-						date.get(Calendar.MONTH),
-						date.get(Calendar.DAY_OF_MONTH)).show();
+			public void onClick(View v) {				
+					new DatePickerDialog(
+							EditDrugActivity.this,
+							purchaseDatePicker,
+							purchaseYear,
+							purchaseMonth,
+							purchaseDay).show();
 			}
 		});
 
 		expireDate.setText(expireExtra);
+		expireDate.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				new DatePickerDialog(
+						EditDrugActivity.this,
+						expireDatePicker,
+						expireYear,
+						expireMonth,
+						expireDay).show();
+			}
+		});
+		
 		pathology.setText(pathologyExtra);
 		minAge.setText(new Integer(minAgeExtra).toString());
 		category.setSelection(categoryExtra);
@@ -106,19 +146,9 @@ public void onSaveClick(View view) {
 	    	drug.setName(name.getText().toString());
 	    	drug.setType(type.getSelectedItemPosition());
 	    	drug.setBrand(brand.getText().toString());
-	    	
-//	    	int day = purchaseDate.getDayOfMonth();
-//	    	int month = purchaseDate.getMonth();
-//	    	int year = purchaseDate.getYear();
-//	    	String purchase = new String(year + "/" + month + "/" + day);
-//	    	drug.setPurchaseDate(purchase);
-//	    	
-//	    	day = expireDate.getDayOfMonth();
-//	    	month = expireDate.getMonth();
-//	    	year = expireDate.getYear();
-//	    	String expire = new String(year + "/" + month + "/" + day);
-//	    	drug.setExpireDate(expire);
-	    	
+	    	drug.setPurchaseDate(purchaseDate.getText().toString());
+	    	drug.setExpireDate(expireDate.getText().toString());
+	    		
 	    	drug.setPathology(pathology.getText().toString());
 	    	if(minAge.getText().toString().length() != 0)
 	    		drug.setMinAge(Integer.parseInt(minAge.getText().toString()));
@@ -141,8 +171,16 @@ public void onSaveClick(View view) {
     	}
     }
 
-	private void updateLabel() {
-		purchaseDate.setText(fmtDate.format(date.getTime()));
+	private void updatePurchaseLabel() {
+		purchaseDate.setText(fmtDate.format(purchaseCalendar.getTime()));
+		purchaseYear = purchaseCalendar.getTime().getYear() + 1900;
+		purchaseMonth = purchaseCalendar.getTime().getMonth();
+		purchaseDay = purchaseCalendar.getTime().getDay() - 1;
 	}
-
+	private void updateExpireLabel() {
+		expireDate.setText(fmtDate.format(expireCalendar.getTime()));
+		expireYear = expireCalendar.getTime().getYear() + 1900;
+		expireMonth = expireCalendar.getTime().getMonth();
+		expireDay = expireCalendar.getTime().getDay() - 1;
+	}
 }
