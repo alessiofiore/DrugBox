@@ -4,6 +4,13 @@
     <string name="hello">Hello World, DrugBoxActivity!</string>
     <string name="app_name">DrugBox</string>
     
+    <!-- Activities -->
+    <string name="act_add_drug">Add drug</string>    
+    <string name="act_list_drugs">Drugs list</string>
+    <string name="act_drug_details">Drug details</string>
+    <string name="act_edit_drug">Edit drug</string>
+    <string name="act_expired_drugs">Expired drugs</string>
+    
     <!-- Button labels -->
     <string name="button_add">Add</string>
     <string name="button_search">Search</string>
@@ -51,10 +58,11 @@
     <string name="msg_updated">Drug updated</string>
     
     <!-- Option Menu -->
-    <string name="edit_drug">Edit</string>
-    <string name="delete_drug">Delete</string>
+    <string name="opt_edit_drug">Edit</string>
+    <string name="opt_delete_drug">Delete</string>
     
     <!-- Notifications -->
-    <string name="local_service_started">Service started</string>
-    
+    <string name="notif_expired_title">DrugBox</string>
+    <string name="notif_expired_single">1 drug expired</string>
+    <string name="notif_expired_multi">%d drugs expired</string>
 </resources>

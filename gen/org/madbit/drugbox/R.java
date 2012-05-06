@@ -56,52 +56,62 @@ public final class R {
     public static final class layout {
         public static final int add_drug=0x7f030000;
         public static final int drug_details=0x7f030001;
-        public static final int edit_drug=0x7f030002;
-        public static final int list_drugs=0x7f030003;
-        public static final int main=0x7f030004;
+        public static final int drugs_list=0x7f030002;
+        public static final int edit_drug=0x7f030003;
+        public static final int expired_drugs=0x7f030004;
+        public static final int main=0x7f030005;
     }
     public static final class menu {
         public static final int drugdetails_option_menu=0x7f060000;
     }
     public static final class string {
+        /**  Activities 
+         */
+        public static final int act_add_drug=0x7f040002;
+        public static final int act_drug_details=0x7f040004;
+        public static final int act_edit_drug=0x7f040005;
+        public static final int act_expired_drugs=0x7f040006;
+        public static final int act_list_drugs=0x7f040003;
         public static final int app_name=0x7f040001;
         /**  Button labels 
          */
-        public static final int button_add=0x7f040002;
-        public static final int button_list=0x7f040004;
-        public static final int button_save=0x7f040005;
-        public static final int button_search=0x7f040003;
-        public static final int category_prompt=0x7f040013;
-        public static final int delete_drug=0x7f040019;
-        public static final int drug_prompt=0x7f040012;
-        /**  Option Menu 
-         */
-        public static final int edit_drug=0x7f040018;
+        public static final int button_add=0x7f040007;
+        public static final int button_list=0x7f040009;
+        public static final int button_save=0x7f04000a;
+        public static final int button_search=0x7f040008;
+        public static final int category_prompt=0x7f040018;
+        public static final int drug_prompt=0x7f040017;
         public static final int hello=0x7f040000;
-        public static final int label_brand=0x7f040009;
-        public static final int label_brand_box=0x7f04000a;
-        public static final int label_category=0x7f040011;
-        public static final int label_expire=0x7f04000c;
-        public static final int label_min_age=0x7f04000f;
-        public static final int label_min_age_box=0x7f040010;
+        public static final int label_brand=0x7f04000e;
+        public static final int label_brand_box=0x7f04000f;
+        public static final int label_category=0x7f040016;
+        public static final int label_expire=0x7f040011;
+        public static final int label_min_age=0x7f040014;
+        public static final int label_min_age_box=0x7f040015;
         /**  Add Drug labels 
          */
-        public static final int label_name=0x7f040006;
-        public static final int label_name_box=0x7f040007;
-        public static final int label_pathology=0x7f04000d;
-        public static final int label_pathology_box=0x7f04000e;
-        public static final int label_purchase=0x7f04000b;
-        public static final int label_type=0x7f040008;
-        /**  Notifications 
-         */
-        public static final int local_service_started=0x7f04001a;
+        public static final int label_name=0x7f04000b;
+        public static final int label_name_box=0x7f04000c;
+        public static final int label_pathology=0x7f040012;
+        public static final int label_pathology_box=0x7f040013;
+        public static final int label_purchase=0x7f040010;
+        public static final int label_type=0x7f04000d;
         /**  Toast messages 
          */
-        public static final int msg_added=0x7f040015;
-        public static final int msg_deleted=0x7f040016;
-        public static final int msg_updated=0x7f040017;
+        public static final int msg_added=0x7f04001a;
+        public static final int msg_deleted=0x7f04001b;
+        public static final int msg_updated=0x7f04001c;
         /**  List Drugs 
          */
-        public static final int no_item=0x7f040014;
+        public static final int no_item=0x7f040019;
+        public static final int notif_expired_multi=0x7f040021;
+        public static final int notif_expired_single=0x7f040020;
+        /**  Notifications 
+         */
+        public static final int notif_expired_title=0x7f04001f;
+        public static final int opt_delete_drug=0x7f04001e;
+        /**  Option Menu 
+         */
+        public static final int opt_edit_drug=0x7f04001d;
     }
 }

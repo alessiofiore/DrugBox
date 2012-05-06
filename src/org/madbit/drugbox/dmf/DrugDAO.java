@@ -74,6 +74,27 @@ public class DrugDAO {
 		database.update(DatabaseHelper.TABLE_DRUG, drugValues, DatabaseHelper.DRUG_ID + "=?", new String [] {new Integer(drug.getDid()).toString()});		
 	}
 	
+	public int getExpiredDrugsCount() {
+		String sql = "SELECT count(" + DatabaseHelper.DRUG_ID + ") FROM " + DatabaseHelper.TABLE_DRUG + " WHERE date(" + DatabaseHelper.DRUG_PURCHASE_DATE + ") < date('now')";
+		Cursor cursor = database.rawQuery(sql, null);
+		cursor.moveToFirst();
+		return cursor.getInt(0);
+	}
+	
+	public List<Drug> getExpiredDrugs() {
+		List<Drug> drugs = new ArrayList<Drug>();
+		String sql = "SELECT * FROM " + DatabaseHelper.TABLE_DRUG + " WHERE date(" + DatabaseHelper.DRUG_PURCHASE_DATE + ") < date('now')";
+		Cursor cursor = database.rawQuery(sql, null);
+		cursor.moveToFirst();
+		while (!cursor.isAfterLast()) {
+			Drug drug = cursorToDrug(cursor);
+			drugs.add(drug);
+			cursor.moveToNext();
+		}
+		cursor.close();
+		return drugs;
+	}
+	
 	private Drug cursorToDrug(Cursor cursor) {
 		Drug drug = new Drug();
 		drug.setDid(cursor.getInt(0));

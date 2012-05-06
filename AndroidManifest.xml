@@ -5,12 +5,14 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="10" />
+    
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".HomeActivity"
+            android:name=".activity.HomeActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,21 +20,25 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="org.madbit.drugbox.AddDrugActivity" android:label="@string/app_name" >
+        <activity android:name=".activity.AddDrugActivity" android:label="@string/act_add_drug" >
 		</activity>		
-        <activity android:name="org.madbit.drugbox.ListDrugsActivity" android:label="@string/app_name" >
+        <activity android:name=".activity.DrugsListActivity" android:label="@string/act_list_drugs" >
 		</activity>
-		<activity android:name="org.madbit.drugbox.DrugDetailsActivity" android:label="@string/app_name" >
+		<activity android:name=".activity.DrugDetailsActivity" android:label="@string/act_drug_details" >
 		</activity>
-		<activity android:name="org.madbit.drugbox.EditDrugActivity" android:label="@string/app_name" >
+		<activity android:name=".activity.EditDrugActivity" android:label="@string/act_edit_drug" >
+		</activity>
+		<activity android:name=".activity.ExpiredDrugsActivity" android:label="@string/act_expired_drugs" >
 		</activity>
 		
-		<service android:name=".service.ExpiredDrugService" android:label="@string/app_name">
-		    <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+		<service android:name="org.madbit.drugbox.service.ExpiredDrugService" android:label="@string/app_name">
 		</service>
+		
+<!-- 		<receiver android:name="org.madbit.drugbox.service.DrugBoxBroadcastReceiver">  
+		    <intent-filter>  
+		        <action android:name="android.intent.action.BOOT_COMPLETED" />  
+		    </intent-filter>  
+		</receiver> -->
 		
     </application>
 
