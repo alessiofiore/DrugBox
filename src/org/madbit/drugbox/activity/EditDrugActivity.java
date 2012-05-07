@@ -29,6 +29,7 @@ public class EditDrugActivity extends Activity {
 	EditText purchaseDate;
 	EditText expireDate;
 	EditText pathology;
+	EditText administration;
 	EditText minAge;
 	Spinner category;
 	
@@ -77,6 +78,7 @@ public class EditDrugActivity extends Activity {
         purchaseDate = (EditText) findViewById(R.id.purchase);
         expireDate = (EditText) findViewById(R.id.expire);
         pathology = (EditText) findViewById(R.id.pathology);
+        administration = (EditText) findViewById(R.id.administration);
         minAge = (EditText) findViewById(R.id.minAge);
         
         category = (Spinner) findViewById(R.id.category);        
@@ -91,6 +93,7 @@ public class EditDrugActivity extends Activity {
 		purchaseExtra = (String) this.getIntent().getSerializableExtra("purchase");
 		expireExtra = (String) this.getIntent().getSerializableExtra("expire");
 		String pathologyExtra = (String) this.getIntent().getSerializableExtra("pathology");
+		String administrationExtra = (String) this.getIntent().getSerializableExtra("administration");
 		int minAgeExtra = (Integer) this.getIntent().getSerializableExtra("minAge");
 		int categoryExtra = (Integer) this.getIntent().getSerializableExtra("category");
 		
@@ -134,6 +137,7 @@ public class EditDrugActivity extends Activity {
 		});
 		
 		pathology.setText(pathologyExtra);
+		administration.setText(administrationExtra);
 		minAge.setText(new Integer(minAgeExtra).toString());
 		category.setSelection(categoryExtra);
     }
@@ -150,6 +154,8 @@ public void onSaveClick(View view) {
 	    	drug.setExpireDate(expireDate.getText().toString());
 	    		
 	    	drug.setPathology(pathology.getText().toString());
+	    	drug.setAdministration(administration.getText().toString());
+	    	
 	    	if(minAge.getText().toString().length() != 0)
 	    		drug.setMinAge(Integer.parseInt(minAge.getText().toString()));
 	    	else

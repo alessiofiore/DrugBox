@@ -22,7 +22,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10" 
-                android:hint="@string/label_name_box"/>
+                android:hint="@string/label_name_box"/>            
+            
+             <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/labelPathology"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
             
             <TextView
                 android:id="@+id/labelType"
@@ -33,7 +42,16 @@
                 android:id="@+id/type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" 
-                android:prompt="@string/drug_prompt" />
+                android:prompt="@string/drug_prompt" />            
+            
+             <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/labelPathology"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
 
             <TextView
                 android:id="@+id/labelBrand"
@@ -45,7 +63,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10" 
-                android:hint="@string/label_brand_box"/>
+                android:hint="@string/label_brand_box"/>            
+            
+             <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/labelPathology"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
 
             <TextView
                 android:id="@+id/labelPurchase"
@@ -55,7 +82,16 @@
             <DatePicker
                 android:id="@+id/purchase"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" />            
+            
+             <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/labelPathology"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
 
             <TextView
                 android:id="@+id/labelExpire"
@@ -65,7 +101,16 @@
             <DatePicker
                 android:id="@+id/expire"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" />            
+            
+             <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/labelPathology"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
 
             <TextView
                 android:id="@+id/labelPathology"
@@ -78,8 +123,39 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textMultiLine" 
-                android:hint="@string/label_pathology_box" />
+                android:hint="@string/label_pathology_box" />            
+            
+             <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/labelPathology"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
 
+            <TextView
+                android:id="@+id/labelAdministration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_administration" />
+            <EditText
+                android:id="@+id/administration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine" 
+                android:hint="@string/label_administration_box" />            
+            
+             <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/labelPathology"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
+            
             <TextView
                 android:id="@+id/labelMinAge"
                 android:layout_width="wrap_content"
@@ -102,7 +178,7 @@
                 android:id="@+id/category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" 
-                android:prompt="@string/category_prompt" />            
+                android:prompt="@string/category_prompt" />
 			
 			<Button
                 android:id="@+id/saveButton"

@@ -61,6 +61,7 @@ public class DrugsListActivity extends ListActivity  {
 			drugDetailsActivity.putExtra("purchase", drug.getPurchaseDate());
 			drugDetailsActivity.putExtra("expire", drug.getExpireDate());
 			drugDetailsActivity.putExtra("pathology", drug.getPathology());
+			drugDetailsActivity.putExtra("administration", drug.getAdministration());
 			drugDetailsActivity.putExtra("minAge", drug.getMinAge());
 			drugDetailsActivity.putExtra("category", drug.getCategory());
 			

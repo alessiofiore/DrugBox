@@ -44,15 +44,12 @@ public class ExpiredDrugsAdapter extends ArrayAdapter<Drug> {
         {
             drugsView = (LinearLayout) convertView;
         }
-        TextView drugName =(TextView)drugsView.findViewById(R.id.drugName);
-        TextView drugType =(TextView)drugsView.findViewById(R.id.drugType);
+        TextView drugName =(TextView)drugsView.findViewById(R.id.name);
+        TextView drugType =(TextView)drugsView.findViewById(R.id.expireDate);
  
-        drugName.setText(drug.getName());        
-        
-        // fetch the relative String for the Type
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.context, R.array.drug_types, android.R.layout.simple_spinner_item);
-		String type = adapter.getItem(drug.getType()).toString();			
-        drugType.setText(type);
+        drugName.setText(drug.getName());
+        String expirationDate = String.format(context.getText(R.string.expirationDate).toString(), drug.getExpireDate());
+        drugType.setText(expirationDate);
  
         return drugsView;
     }

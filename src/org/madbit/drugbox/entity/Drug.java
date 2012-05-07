@@ -10,6 +10,7 @@ public class Drug {
 	private String purchaseDate;
 	private String expireDate;
 	private String pathology;
+	private String administration;
 	private int minAge;
 	private int category;
 	
@@ -84,6 +85,14 @@ public class Drug {
 
 	public void setPathology(String pathology) {
 		this.pathology = pathology;
+	}
+
+	public String getAdministration() {
+		return administration;
+	}
+
+	public void setAdministration(String administration) {
+		this.administration = administration;
 	}
 
 	public int getMinAge() {

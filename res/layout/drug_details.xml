@@ -137,6 +137,27 @@
 			    android:layout_below="@+id/connect_help"
 			    android:layout_width="match_parent"
 			    android:layout_height="1dp" />
+            
+            <TextView
+                android:id="@+id/labelAdministration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_administration" 
+                android:textColor="#40B2E3"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/administration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            
+            <TextView
+			    android:id="@+id/line"
+			    style="?android:attr/listSeparatorTextViewStyle"
+			    android:paddingTop="5dip"
+			    android:gravity="center_horizontal"
+			    android:layout_below="@+id/connect_help"
+			    android:layout_width="match_parent"
+			    android:layout_height="1dp" />
 
             <TextView
                 android:id="@+id/labelMinAge"

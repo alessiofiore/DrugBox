@@ -22,6 +22,7 @@ public class DrugDetailsActivity extends Activity {
 	String purchaseExtra;
 	String expireExtra;
 	String pathologyExtra;
+	String administrationExtra;
 	int minAgeExtra;
 	int categoryExtra;
 
@@ -38,6 +39,7 @@ public class DrugDetailsActivity extends Activity {
 		TextView purchase = (TextView) findViewById(R.id.purchase);
 		TextView expire = (TextView) findViewById(R.id.expire);
 		TextView pathology = (TextView) findViewById(R.id.pathology);
+		TextView administration = (TextView) findViewById(R.id.administration);
 		TextView minAge = (TextView) findViewById(R.id.minAge);
 		TextView category = (TextView) findViewById(R.id.category);
 		
@@ -47,6 +49,7 @@ public class DrugDetailsActivity extends Activity {
 		purchaseExtra = (String) this.getIntent().getSerializableExtra("purchase");
 		expireExtra = (String) this.getIntent().getSerializableExtra("expire");
 		pathologyExtra = (String) this.getIntent().getSerializableExtra("pathology");
+		administrationExtra = (String) this.getIntent().getSerializableExtra("administration");
 		minAgeExtra = (Integer) this.getIntent().getSerializableExtra("minAge");
 		categoryExtra = (Integer) this.getIntent().getSerializableExtra("category");
 		
@@ -61,6 +64,7 @@ public class DrugDetailsActivity extends Activity {
 		purchase.setText(purchaseExtra);
 		expire.setText(expireExtra);
 		pathology.setText(pathologyExtra);
+		administration.setText(administrationExtra);
 		minAge.setText(new Integer(minAgeExtra).toString());
 		
 		// fetch the relative String for the category
@@ -90,6 +94,7 @@ public class DrugDetailsActivity extends Activity {
 		    	bundle.putString("purchase", purchaseExtra);
 		    	bundle.putString("expire", expireExtra);
 		    	bundle.putString("pathology", pathologyExtra);
+		    	bundle.putString("administration", administrationExtra);
 		    	bundle.putInt("minAge", minAgeExtra);
 		    	bundle.putInt("category", categoryExtra);
 		    	startActivity(new Intent(this, EditDrugActivity.class).putExtras(bundle));

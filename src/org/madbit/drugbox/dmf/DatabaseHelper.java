@@ -16,6 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final String DRUG_PURCHASE_DATE = "purchaseDate";
 	public static final String DRUG_EXPIRING_DATE = "expireDate";
 	public static final String DRUG_PATHOLOGY = "pathology";
+	public static final String DRUG_ADMINISTRATION = "administration";
 	public static final String DRUG_MIN_AGE = "minAge";
 	public static final String DRUG_CATEGORY = "category";
 
@@ -32,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				DRUG_PURCHASE_DATE + " text, " +
 				DRUG_EXPIRING_DATE + " text, " +
 				DRUG_PATHOLOGY + " text, " +
+				DRUG_ADMINISTRATION + " text, " +
 				DRUG_MIN_AGE + " integer, " +
 				DRUG_CATEGORY + " integer);";
 

@@ -16,7 +16,7 @@ public class DrugDAO {
 	private SQLiteDatabase database;
 	private DatabaseHelper dbHelper;
 	private String[] drugColumns = {DatabaseHelper.DRUG_ID, DatabaseHelper.DRUG_NAME, DatabaseHelper.DRUG_TYPE, DatabaseHelper.DRUG_BRAND, DatabaseHelper.DRUG_PURCHASE_DATE, 
-			DatabaseHelper.DRUG_EXPIRING_DATE, DatabaseHelper.DRUG_PATHOLOGY, DatabaseHelper.DRUG_MIN_AGE, DatabaseHelper.DRUG_CATEGORY};
+			DatabaseHelper.DRUG_EXPIRING_DATE, DatabaseHelper.DRUG_PATHOLOGY, DatabaseHelper.DRUG_ADMINISTRATION, DatabaseHelper.DRUG_MIN_AGE, DatabaseHelper.DRUG_CATEGORY};
 	
 	public DrugDAO(Context context) {
 		dbHelper = new DatabaseHelper(context);
@@ -38,6 +38,7 @@ public class DrugDAO {
 		drugValues.put(DatabaseHelper.DRUG_PURCHASE_DATE, drug.getPurchaseDate());
 		drugValues.put(DatabaseHelper.DRUG_EXPIRING_DATE, drug.getExpireDate());
 		drugValues.put(DatabaseHelper.DRUG_PATHOLOGY, drug.getPathology());
+		drugValues.put(DatabaseHelper.DRUG_ADMINISTRATION, drug.getAdministration());
 		drugValues.put(DatabaseHelper.DRUG_MIN_AGE, drug.getMinAge());
 		drugValues.put(DatabaseHelper.DRUG_CATEGORY, drug.getCategory());
 		long drugId = database.insert(DatabaseHelper.TABLE_DRUG, null, drugValues);
@@ -69,13 +70,14 @@ public class DrugDAO {
 		drugValues.put(DatabaseHelper.DRUG_PURCHASE_DATE, drug.getPurchaseDate());
 		drugValues.put(DatabaseHelper.DRUG_EXPIRING_DATE, drug.getExpireDate());
 		drugValues.put(DatabaseHelper.DRUG_PATHOLOGY, drug.getPathology());
+		drugValues.put(DatabaseHelper.DRUG_ADMINISTRATION, drug.getAdministration());
 		drugValues.put(DatabaseHelper.DRUG_MIN_AGE, drug.getMinAge());
 		drugValues.put(DatabaseHelper.DRUG_CATEGORY, drug.getCategory());
 		database.update(DatabaseHelper.TABLE_DRUG, drugValues, DatabaseHelper.DRUG_ID + "=?", new String [] {new Integer(drug.getDid()).toString()});		
 	}
 	
 	public int getExpiredDrugsCount() {
-		String sql = "SELECT count(" + DatabaseHelper.DRUG_ID + ") FROM " + DatabaseHelper.TABLE_DRUG + " WHERE date(" + DatabaseHelper.DRUG_PURCHASE_DATE + ") < date('now')";
+		String sql = "SELECT count(" + DatabaseHelper.DRUG_ID + ") FROM " + DatabaseHelper.TABLE_DRUG + " WHERE date(" + DatabaseHelper.DRUG_EXPIRING_DATE + ") < date('now')";
 		Cursor cursor = database.rawQuery(sql, null);
 		cursor.moveToFirst();
 		return cursor.getInt(0);
@@ -83,7 +85,7 @@ public class DrugDAO {
 	
 	public List<Drug> getExpiredDrugs() {
 		List<Drug> drugs = new ArrayList<Drug>();
-		String sql = "SELECT * FROM " + DatabaseHelper.TABLE_DRUG + " WHERE date(" + DatabaseHelper.DRUG_PURCHASE_DATE + ") < date('now')";
+		String sql = "SELECT * FROM " + DatabaseHelper.TABLE_DRUG + " WHERE date(" + DatabaseHelper.DRUG_EXPIRING_DATE + ") < date('now')";
 		Cursor cursor = database.rawQuery(sql, null);
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
@@ -104,8 +106,9 @@ public class DrugDAO {
 		drug.setPurchaseDate(cursor.getString(4));
 		drug.setExpireDate(cursor.getString(5));
 		drug.setPathology(cursor.getString(6));
-		drug.setMinAge(cursor.getInt(7));
-		drug.setCategory(cursor.getInt(8));
+		drug.setAdministration(cursor.getString(7));
+		drug.setMinAge(cursor.getInt(8));
+		drug.setCategory(cursor.getInt(9));
 		return drug;
 	}
 }

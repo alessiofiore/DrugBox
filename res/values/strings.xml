@@ -4,7 +4,7 @@
     <string name="hello">Hello World, DrugBoxActivity!</string>
     <string name="app_name">DrugBox</string>
     
-    <!-- Activities -->
+    <!-- Activity names-->
     <string name="act_add_drug">Add drug</string>    
     <string name="act_list_drugs">Drugs list</string>
     <string name="act_drug_details">Drug details</string>
@@ -12,6 +12,8 @@
     <string name="act_expired_drugs">Expired drugs</string>
     
     <!-- Button labels -->
+    <string name="button_yes">Yes</string>
+    <string name="button_no">No</string>
     <string name="button_add">Add</string>
     <string name="button_search">Search</string>
     <string name="button_list">List</string>
@@ -27,6 +29,8 @@
     <string name="label_expire">Expiring date</string>
     <string name="label_pathology">Pathology</string>
     <string name="label_pathology_box">Pathology</string>
+    <string name="label_administration">Administration</string>
+    <string name="label_administration_box">Administration</string>
     <string name="label_min_age">Min age</string>
     <string name="label_min_age_box">Min age of administration</string>
     <string name="label_category">Category</string>
@@ -52,14 +56,23 @@
     <!-- List Drugs -->
     <string name="no_item">No drugs</string>
     
+    <!-- Expired Drugs -->
+    <string name="expirationDate">Expired on %s</string>
+    
     <!-- Toast messages -->
     <string name="msg_added">Drug saved</string>
     <string name="msg_deleted">Drug deleted</string>
     <string name="msg_updated">Drug updated</string>
+    <string name="msg_missed_name">You need to insert the name</string>
     
     <!-- Option Menu -->
     <string name="opt_edit_drug">Edit</string>
     <string name="opt_delete_drug">Delete</string>
+    
+    <!-- Alert Dialog -->
+    <string name="dialog_wrong_date_title">Date alert</string>
+    <string name="dialog_wrong_date_msg">The expiry date is earlier than the date of purchase. Do you want continue anyway?</string>
+    
     
     <!-- Notifications -->
     <string name="notif_expired_title">DrugBox</string>
