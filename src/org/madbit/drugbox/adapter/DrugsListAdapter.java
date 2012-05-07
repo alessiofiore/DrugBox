@@ -10,16 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class DrugAdapter extends ArrayAdapter<Drug> {
+public class DrugsListAdapter extends ArrayAdapter<Drug> {
 
 	private final Context context;
 	private final List<Drug> drugs;
 	private int resource;
 	
-	public DrugAdapter(Context context, int resource, List<Drug> drugs) {
+	public DrugsListAdapter(Context context, int resource, List<Drug> drugs) {
 		super(context, resource, resource, drugs);
 		this.context = context;
 		this.resource = resource;
@@ -44,6 +45,9 @@ public class DrugAdapter extends ArrayAdapter<Drug> {
         {
             drugsView = (LinearLayout) convertView;
         }
+		ImageView icon = (ImageView)drugsView.findViewById(R.id.status_icon);
+		
+		icon.setImageResource(R.drawable.bullet_red);
         TextView drugName =(TextView)drugsView.findViewById(R.id.drugName);
         TextView drugType =(TextView)drugsView.findViewById(R.id.drugType);
  

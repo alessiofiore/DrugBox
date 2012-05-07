@@ -45,10 +45,10 @@ public class ExpiredDrugsAdapter extends ArrayAdapter<Drug> {
             drugsView = (LinearLayout) convertView;
         }
         TextView drugName =(TextView)drugsView.findViewById(R.id.name);
-        TextView drugType =(TextView)drugsView.findViewById(R.id.expireDate);
+        TextView drugType =(TextView)drugsView.findViewById(R.id.expiryDate);
  
         drugName.setText(drug.getName());
-        String expirationDate = String.format(context.getText(R.string.expirationDate).toString(), drug.getExpireDate());
+        String expirationDate = String.format(context.getText(R.string.expirationDate).toString(), drug.getExpiryDate());
         drugType.setText(expirationDate);
  
         return drugsView;

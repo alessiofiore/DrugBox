@@ -8,7 +8,7 @@ public class Drug {
 	private int type;
 	private String brand;
 	private String purchaseDate;
-	private String expireDate;
+	private String expiryDate;
 	private String pathology;
 	private String administration;
 	private int minAge;
@@ -19,13 +19,13 @@ public class Drug {
 	}
 	
 	public Drug(int did, String name, String brand, String purchaseDate,
-			String expireDate, String pathology, int minAge, int category) {
+			String expiryDate, String pathology, int minAge, int category) {
 		super();
 		this.did = did;
 		this.name = name;
 		this.brand = brand;
 		this.purchaseDate = purchaseDate;
-		this.expireDate = expireDate;
+		this.expiryDate = expiryDate;
 		this.pathology = pathology;
 		this.minAge = minAge;
 		this.category = category;
@@ -71,12 +71,12 @@ public class Drug {
 		this.purchaseDate = purchaseDate;
 	}
 
-	public String getExpireDate() {
-		return expireDate;
+	public String getExpiryDate() {
+		return expiryDate;
 	}
 
-	public void setExpireDate(String expireDate) {
-		this.expireDate = expireDate;
+	public void setExpiryDate(String expiryDate) {
+		this.expiryDate = expiryDate;
 	}
 
 	public String getPathology() {

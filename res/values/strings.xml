@@ -14,6 +14,7 @@
     <!-- Button labels -->
     <string name="button_yes">Yes</string>
     <string name="button_no">No</string>
+    <string name="button_close">Close</string>
     <string name="button_add">Add</string>
     <string name="button_search">Search</string>
     <string name="button_list">List</string>
@@ -63,16 +64,14 @@
     <string name="msg_added">Drug saved</string>
     <string name="msg_deleted">Drug deleted</string>
     <string name="msg_updated">Drug updated</string>
-    <string name="msg_missed_name">You need to insert the name</string>
     
     <!-- Option Menu -->
     <string name="opt_edit_drug">Edit</string>
     <string name="opt_delete_drug">Delete</string>
     
     <!-- Alert Dialog -->
-    <string name="dialog_wrong_date_title">Date alert</string>
-    <string name="dialog_wrong_date_msg">The expiry date is earlier than the date of purchase. Do you want continue anyway?</string>
-    
+    <string name="dialog_wrong_date">The expiry date is earlier than the date of purchase.\nDo you want continue anyway?</string>
+    <string name="dialog_missed_name">The drug\'s name cannot be empty.\nYou need to insert the name</string>
     
     <!-- Notifications -->
     <string name="notif_expired_title">DrugBox</string>

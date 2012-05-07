@@ -18,7 +18,6 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class AddDrugActivity extends Activity {
 	
@@ -26,7 +25,7 @@ public class AddDrugActivity extends Activity {
 	private Spinner type;
 	private EditText brand;
 	private DatePicker purchaseDate;
-	private DatePicker expireDate;
+	private DatePicker expiryDate;
 	private EditText pathology;
 	private EditText administration;
 	private EditText minAge;
@@ -49,7 +48,7 @@ public class AddDrugActivity extends Activity {
         
         brand = (EditText) findViewById(R.id.brand);
         purchaseDate = (DatePicker) findViewById(R.id.purchase);
-        expireDate = (DatePicker) findViewById(R.id.expire);
+        expiryDate = (DatePicker) findViewById(R.id.expire);
         pathology = (EditText) findViewById(R.id.pathology);
         administration = (EditText) findViewById(R.id.administration);
         minAge = (EditText) findViewById(R.id.minAge);
@@ -63,11 +62,10 @@ public class AddDrugActivity extends Activity {
     public void onSaveClick(View view) {
     	
     	purchase = new Date(purchaseDate.getYear() - 1900, purchaseDate.getMonth(), purchaseDate.getDayOfMonth());
-    	expire = new Date(expireDate.getYear() - 1900, expireDate.getMonth(), expireDate.getDayOfMonth());
+    	expire = new Date(expiryDate.getYear() - 1900, expiryDate.getMonth(), expiryDate.getDayOfMonth());
     	if(expire.before(purchase)) {  		
     		AlertDialog alertDialog = new AlertDialog.Builder( this )
-    		.setTitle(getString(R.string.dialog_wrong_date_title))
-    		.setMessage(getString(R.string.dialog_wrong_date_msg))
+    		.setMessage(getString(R.string.dialog_wrong_date))
     		.setPositiveButton(getString(R.string.button_yes), new DialogInterface.OnClickListener() {
     			public void onClick(DialogInterface dialog, int which) {
     				addDrug();
@@ -97,7 +95,7 @@ public class AddDrugActivity extends Activity {
 	    	drug.setPurchaseDate(formattedDate);	    	
 	    	
 	    	formattedDate = fmtDate.format(expire);
-	    	drug.setExpireDate(formattedDate);
+	    	drug.setExpiryDate(formattedDate);
 	    	
 	    	drug.setPathology(pathology.getText().toString());
 	    	drug.setAdministration(administration.getText().toString());
@@ -119,7 +117,13 @@ public class AddDrugActivity extends Activity {
 	    	startActivity(new Intent(this, DrugsListActivity.class).putExtras(bundle));
     	}
     	else {
-    		Toast.makeText(this, getString(R.string.msg_missed_name),Toast.LENGTH_LONG).show();
+    		AlertDialog alertDialog = new AlertDialog.Builder( this )
+    		.setMessage(getString(R.string.dialog_missed_name))
+    		.setPositiveButton(getString(R.string.button_close), new DialogInterface.OnClickListener() {
+    			public void onClick(DialogInterface dialog, int which) {
+    				dialog.cancel();
+    			}
+    		}).show();
     	}
 	}
 }

@@ -15,30 +15,32 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int ic_menu_add=0x7f020001;
-        public static final int ic_menu_delete=0x7f020002;
-        public static final int ic_menu_edit=0x7f020003;
-        public static final int ic_menu_more=0x7f020004;
-        public static final int ic_menu_preferences=0x7f020005;
-        public static final int ic_menu_save=0x7f020006;
-        public static final int ic_menu_search=0x7f020007;
+        public static final int bullet_green=0x7f020000;
+        public static final int bullet_red=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int ic_menu_add=0x7f020003;
+        public static final int ic_menu_delete=0x7f020004;
+        public static final int ic_menu_edit=0x7f020005;
+        public static final int ic_menu_more=0x7f020006;
+        public static final int ic_menu_preferences=0x7f020007;
+        public static final int ic_menu_save=0x7f020008;
+        public static final int ic_menu_search=0x7f020009;
     }
     public static final class id {
         public static final int administration=0x7f07000e;
         public static final int brand=0x7f070007;
-        public static final int button_add=0x7f070019;
-        public static final int button_list=0x7f07001b;
-        public static final int button_search=0x7f07001a;
+        public static final int button_add=0x7f07001a;
+        public static final int button_list=0x7f07001c;
+        public static final int button_search=0x7f07001b;
         public static final int category=0x7f070012;
         public static final int connect_help=0x7f070015;
-        public static final int delete_drug=0x7f07001d;
+        public static final int delete_drug=0x7f07001e;
         public static final int drugLabel=0x7f070000;
-        public static final int drugName=0x7f070016;
-        public static final int drugType=0x7f070017;
-        public static final int edit_drug=0x7f07001c;
+        public static final int drugName=0x7f070017;
+        public static final int drugType=0x7f070018;
+        public static final int edit_drug=0x7f07001d;
         public static final int expire=0x7f07000b;
-        public static final int expireDate=0x7f070018;
+        public static final int expiryDate=0x7f070019;
         public static final int labelAdministration=0x7f07000d;
         public static final int labelBrand=0x7f070006;
         public static final int labelCategory=0x7f070011;
@@ -54,6 +56,7 @@ public final class R {
         public static final int pathology=0x7f07000c;
         public static final int purchase=0x7f070009;
         public static final int saveButton=0x7f070013;
+        public static final int status_icon=0x7f070016;
         public static final int type=0x7f070005;
     }
     public static final class layout {
@@ -76,49 +79,49 @@ public final class R {
         public static final int act_expired_drugs=0x7f040006;
         public static final int act_list_drugs=0x7f040003;
         public static final int app_name=0x7f040001;
-        public static final int button_add=0x7f040009;
-        public static final int button_list=0x7f04000b;
+        public static final int button_add=0x7f04000a;
+        public static final int button_close=0x7f040009;
+        public static final int button_list=0x7f04000c;
         public static final int button_no=0x7f040008;
-        public static final int button_save=0x7f04000c;
-        public static final int button_search=0x7f04000a;
+        public static final int button_save=0x7f04000d;
+        public static final int button_search=0x7f04000b;
         /**  Button labels 
          */
         public static final int button_yes=0x7f040007;
-        public static final int category_prompt=0x7f04001c;
-        public static final int dialog_wrong_date_msg=0x7f040026;
+        public static final int category_prompt=0x7f04001d;
+        public static final int dialog_missed_name=0x7f040026;
         /**  Alert Dialog 
          */
-        public static final int dialog_wrong_date_title=0x7f040025;
-        public static final int drug_prompt=0x7f04001b;
+        public static final int dialog_wrong_date=0x7f040025;
+        public static final int drug_prompt=0x7f04001c;
         /**  Expired Drugs 
          */
-        public static final int expirationDate=0x7f04001e;
+        public static final int expirationDate=0x7f04001f;
         public static final int hello=0x7f040000;
-        public static final int label_administration=0x7f040016;
-        public static final int label_administration_box=0x7f040017;
-        public static final int label_brand=0x7f040010;
-        public static final int label_brand_box=0x7f040011;
-        public static final int label_category=0x7f04001a;
-        public static final int label_expire=0x7f040013;
-        public static final int label_min_age=0x7f040018;
-        public static final int label_min_age_box=0x7f040019;
+        public static final int label_administration=0x7f040017;
+        public static final int label_administration_box=0x7f040018;
+        public static final int label_brand=0x7f040011;
+        public static final int label_brand_box=0x7f040012;
+        public static final int label_category=0x7f04001b;
+        public static final int label_expire=0x7f040014;
+        public static final int label_min_age=0x7f040019;
+        public static final int label_min_age_box=0x7f04001a;
         /**  Add Drug labels 
          */
-        public static final int label_name=0x7f04000d;
-        public static final int label_name_box=0x7f04000e;
-        public static final int label_pathology=0x7f040014;
-        public static final int label_pathology_box=0x7f040015;
-        public static final int label_purchase=0x7f040012;
-        public static final int label_type=0x7f04000f;
+        public static final int label_name=0x7f04000e;
+        public static final int label_name_box=0x7f04000f;
+        public static final int label_pathology=0x7f040015;
+        public static final int label_pathology_box=0x7f040016;
+        public static final int label_purchase=0x7f040013;
+        public static final int label_type=0x7f040010;
         /**  Toast messages 
          */
-        public static final int msg_added=0x7f04001f;
-        public static final int msg_deleted=0x7f040020;
-        public static final int msg_missed_name=0x7f040022;
-        public static final int msg_updated=0x7f040021;
+        public static final int msg_added=0x7f040020;
+        public static final int msg_deleted=0x7f040021;
+        public static final int msg_updated=0x7f040022;
         /**  List Drugs 
          */
-        public static final int no_item=0x7f04001d;
+        public static final int no_item=0x7f04001e;
         public static final int notif_expired_multi=0x7f040029;
         public static final int notif_expired_single=0x7f040028;
         /**  Notifications 

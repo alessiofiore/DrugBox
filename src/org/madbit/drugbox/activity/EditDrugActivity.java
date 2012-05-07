@@ -27,7 +27,7 @@ public class EditDrugActivity extends Activity {
 	Spinner type;
 	EditText brand;
 	EditText purchaseDate;
-	EditText expireDate;
+	EditText expiryDate;
 	EditText pathology;
 	EditText administration;
 	EditText minAge;
@@ -54,7 +54,7 @@ public class EditDrugActivity extends Activity {
 		}
 	};
 	Calendar expireCalendar = Calendar.getInstance();
-	DatePickerDialog.OnDateSetListener expireDatePicker = new DatePickerDialog.OnDateSetListener() {
+	DatePickerDialog.OnDateSetListener expiryDatePicker = new DatePickerDialog.OnDateSetListener() {
 		public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 			expireCalendar.set(Calendar.YEAR, year);
 			expireCalendar.set(Calendar.MONTH, monthOfYear);
@@ -76,7 +76,7 @@ public class EditDrugActivity extends Activity {
         
         brand = (EditText) findViewById(R.id.brand);
         purchaseDate = (EditText) findViewById(R.id.purchase);
-        expireDate = (EditText) findViewById(R.id.expire);
+        expiryDate = (EditText) findViewById(R.id.expire);
         pathology = (EditText) findViewById(R.id.pathology);
         administration = (EditText) findViewById(R.id.administration);
         minAge = (EditText) findViewById(R.id.minAge);
@@ -124,12 +124,12 @@ public class EditDrugActivity extends Activity {
 			}
 		});
 
-		expireDate.setText(expireExtra);
-		expireDate.setOnClickListener(new View.OnClickListener() {
+		expiryDate.setText(expireExtra);
+		expiryDate.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				new DatePickerDialog(
 						EditDrugActivity.this,
-						expireDatePicker,
+						expiryDatePicker,
 						expireYear,
 						expireMonth,
 						expireDay).show();
@@ -151,7 +151,7 @@ public void onSaveClick(View view) {
 	    	drug.setType(type.getSelectedItemPosition());
 	    	drug.setBrand(brand.getText().toString());
 	    	drug.setPurchaseDate(purchaseDate.getText().toString());
-	    	drug.setExpireDate(expireDate.getText().toString());
+	    	drug.setExpiryDate(expiryDate.getText().toString());
 	    		
 	    	drug.setPathology(pathology.getText().toString());
 	    	drug.setAdministration(administration.getText().toString());
@@ -184,7 +184,7 @@ public void onSaveClick(View view) {
 		purchaseDay = purchaseCalendar.getTime().getDay() - 1;
 	}
 	private void updateExpireLabel() {
-		expireDate.setText(fmtDate.format(expireCalendar.getTime()));
+		expiryDate.setText(fmtDate.format(expireCalendar.getTime()));
 		expireYear = expireCalendar.getTime().getYear() + 1900;
 		expireMonth = expireCalendar.getTime().getMonth();
 		expireDay = expireCalendar.getTime().getDay() - 1;

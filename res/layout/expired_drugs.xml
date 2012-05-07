@@ -13,7 +13,7 @@
         <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/expireDate"
+        android:id="@+id/expiryDate"
         android:textColor="#d72e2a"        
         android:textSize="12sp" />
     </LinearLayout>    

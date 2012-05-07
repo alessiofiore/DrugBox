@@ -3,7 +3,7 @@ package org.madbit.drugbox.activity;
 import java.util.List;
 
 import org.madbit.drugbox.R;
-import org.madbit.drugbox.adapter.DrugAdapter;
+import org.madbit.drugbox.adapter.DrugsListAdapter;
 import org.madbit.drugbox.dmf.DrugDAO;
 import org.madbit.drugbox.entity.Drug;
 
@@ -44,7 +44,7 @@ public class DrugsListActivity extends ListActivity  {
 			emptyList = true;
 		}
 	
-		DrugAdapter drugAdapter = new DrugAdapter(DrugsListActivity.this, R.layout.drugs_list, drugs);
+		DrugsListAdapter drugAdapter = new DrugsListAdapter(DrugsListActivity.this, R.layout.drugs_list, drugs);
 		setListAdapter(drugAdapter);
 		drugAdapter.notifyDataSetChanged();        
 	}
@@ -59,7 +59,7 @@ public class DrugsListActivity extends ListActivity  {
 			drugDetailsActivity.putExtra("type", drug.getType());
 			drugDetailsActivity.putExtra("brand", drug.getBrand());
 			drugDetailsActivity.putExtra("purchase", drug.getPurchaseDate());
-			drugDetailsActivity.putExtra("expire", drug.getExpireDate());
+			drugDetailsActivity.putExtra("expire", drug.getExpiryDate());
 			drugDetailsActivity.putExtra("pathology", drug.getPathology());
 			drugDetailsActivity.putExtra("administration", drug.getAdministration());
 			drugDetailsActivity.putExtra("minAge", drug.getMinAge());

@@ -59,7 +59,7 @@ public class ExpiredDrugsActivity extends ListActivity  {
 			drugDetailsActivity.putExtra("type", drug.getType());
 			drugDetailsActivity.putExtra("brand", drug.getBrand());
 			drugDetailsActivity.putExtra("purchase", drug.getPurchaseDate());
-			drugDetailsActivity.putExtra("expire", drug.getExpireDate());
+			drugDetailsActivity.putExtra("expire", drug.getExpiryDate());
 			drugDetailsActivity.putExtra("pathology", drug.getPathology());
 			drugDetailsActivity.putExtra("minAge", drug.getMinAge());
 			drugDetailsActivity.putExtra("category", drug.getCategory());
